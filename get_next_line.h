@@ -22,11 +22,15 @@
 # include <sys/types.h>
 # include <unistd.h>
 
+#ifndef GET_NEXT_LINE_H
+# define BUFFER_SIZE 5
+#endif
+
 char	*get_next_line(int fd);
 
-char	*get_line(char **line, char **s_buff);
-int		read_file(int fd, char **buffer, char **s_buff, char **line);
 void	free_ptr(char *ptr);
+char	*get_line(char **line, char **stash);
+int		read_file(int fd, char **buffer, char **stash, char **line);
 
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strjoin(char const *s1, char const *s2);
